@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Пульс України — Партнерство</title>
+  <meta name="description" content="Реклама та співпраця з «Пульс України»: короткі новини України на YouTube, TikTok, Facebook і Telegram.">
+  <style>
+    :root { --bg: #070b14; --card: #0f172a; --line: rgba(255,255,255,.08); --text: #e8edf7; --muted: #94a3b8; --gold: #ffd700; --blue: #0057b7; }
+    * { box-sizing: border-box; }
+    body { margin: 0; min-height: 100vh; background: radial-gradient(circle at 20% 0%, rgba(0,87,183,.28), transparent 55%), radial-gradient(circle at 90% 30%, rgba(255,215,0,.10), transparent 50%), var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; line-height: 1.55; }
+    main { max-width: 560px; margin: 0 auto; padding: 28px 18px 48px; }
+    a.back { color: var(--muted); text-decoration: none; font-size: 15px; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 18px 0 8px; }
+    h1 span { color: var(--gold); }
+    .lead { color: var(--muted); margin: 0 0 24px; font-size: 16px; }
+    section { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 18px; margin-bottom: 14px; }
+    h2 { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--gold); margin: 0 0 10px; }
+    ul { margin: 0; padding-left: 20px; }
+    li { margin: 6px 0; }
+    .stats { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 10px; }
+    .stat { background: #141b30; border-radius: 14px; padding: 12px; }
+    .stat b { display: block; font-size: 22px; font-variant-numeric: tabular-nums; }
+    .stat small { color: var(--muted); font-size: 13px; }
+    .note { color: var(--muted); font-size: 13px; margin-top: 10px; }
+    .mail { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-top: 6px; }
+    .mail code { font-size: 17px; background: #141b30; padding: 10px 12px; border-radius: 12px; user-select: all; word-break: break-all; color: #fff; }
+    button, .write { border: 0; border-radius: 12px; padding: 11px 16px; font-size: 15px; font-weight: 600; cursor: pointer; text-decoration: none; }
+    button { background: linear-gradient(135deg, var(--gold), #d4af37); color: #0a1020; }
+    .write { background: var(--blue); color: #fff; }
+    footer { text-align: center; color: var(--muted); font-size: 13px; margin-top: 28px; }
+  </style>
+</head>
+<body>
+  <main>
+    <a class="back" href="./">← Усі посилання</a>
+    <h1>Партнерство з <span>«Пульс України»</span></h1>
+    <p class="lead">Короткі новини України простою мовою — щодня на YouTube, TikTok, Facebook і в Telegram. Головне без зайвого шуму.</p>
+
+    <section>
+      <h2>Аудиторія</h2>
+      <div class="stats">
+        <div class="stat"><b>57 тис.</b><small>переглядів на YouTube за 28 днів</small></div>
+        <div class="stat"><b>50 тис.</b><small>переглядів у TikTok за тиждень</small></div>
+      </div>
+      <p class="note">Дані за жовтень 2026. Глядачі — україномовна аудиторія в Україні та за кордоном. Актуальну статистику надішлемо на запит.</p>
+    </section>
+
+    <section>
+      <h2>Що можемо запропонувати</h2>
+      <ul>
+        <li>Інтеграція у короткий ролик (Shorts / TikTok / Reels)</li>
+        <li>Згадка у щоденному випуску новин</li>
+        <li>Пост або закріплене повідомлення в Telegram</li>
+        <li>Розповідь про благодійні збори та ініціативи для України</li>
+        <li>Прес-релізи та новини компаній</li>
+      </ul>
+      <p class="note">Не рекламуємо азартні ігри, сумнівні фінансові продукти та все, що шкодить людям.</p>
+    </section>
+
+    <section>
+      <h2>Написати нам</h2>
+      <p style="margin:0">Розкажіть коротко про продукт, бажаний формат і терміни — відповімо протягом 1–2 днів.</p>
+      <div class="mail">
+        <code id="email">pulsua.partners@gmail.com</code>
+        <button type="button" id="copy">Скопіювати</button>
+        <a class="write" href="mailto:pulsua.partners@gmail.com?subject=%D0%A1%D0%BF%D1%96%D0%B2%D0%BF%D1%80%D0%B0%D1%86%D1%8F%20%D0%B7%20%D0%9F%D1%83%D0%BB%D1%8C%D1%81%20%D0%A3%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D0%B8">Написати</a>
+      </div>
+    </section>
+
+    <footer>© Пульс України</footer>
+  </main>
+  <script>
+    document.getElementById("copy").addEventListener("click", async (event) => {
+      const button = event.currentTarget;
+      try { await navigator.clipboard.writeText("pulsua.partners@gmail.com"); button.textContent = "Скопійовано ✓"; }
+      catch { const range = document.createRange(); range.selectNodeContents(document.getElementById("email")); const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range); button.textContent = "Виділено — скопіюйте"; }
+      setTimeout(() => { button.textContent = "Скопіювати"; }, 2500);
+    });
+  </script>
+</body>
+</html>
